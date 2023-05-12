@@ -19,7 +19,7 @@ let albums = [
     artist: "Linkin Park",
     album_type: "Alternative",
     release_date_precision: "2000-10-24",
-    tracks: ["Papercut", "One Step Closer", "With You", "Crawling"]
+    tracks: ["Papercut", "One Step Closer", "With You", "Points of Authority", "Crawling"]
   },
   {
     name: "Bad",
@@ -65,14 +65,15 @@ let albums = [
   }
 ];
 
-
+// Add some HTML via Javascript
+document.write(`<ul class="text-center text-lg text-gray-700">`);
 let maxTracks = 0;
 let albumWithMaxTracks = '';
 
 // Return a list with all artists and album names
 for (let i = 0; i < albums.length; i++) {
   if (albums[i].name && albums[i].artist) {
-    document.write(`${albums[i].artist} - ${albums[i].name}<br>`);
+    document.write(`<li class="bg-blue-200">${albums[i].artist} - ${albums[i].name}</li>`);
 
     // Check for the album with the highest number of tracks
     if (albums[i].tracks && albums[i].tracks.length > maxTracks) {
@@ -81,7 +82,8 @@ for (let i = 0; i < albums.length; i++) {
     }
   }
 }
-//Print out the result of the highest number of tracks
+// Print out the result of the highest number of tracks
 if (albumWithMaxTracks) {
   document.write(`<br>Wow, ${albumWithMaxTracks} has <strong>${maxTracks}</strong> tracks!`);
 }
+document.write(`</ul>`);
