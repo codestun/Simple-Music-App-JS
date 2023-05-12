@@ -64,3 +64,24 @@ let albums = [
     tracks: ["Rolling in the Deep", "Rumour Has It", "Turning Tables", "Someone Like You"]
   }
 ];
+
+
+let maxTracks = 0;
+let albumWithMaxTracks = '';
+
+// Return a list with all artists and album names
+for (let i = 0; i < albums.length; i++) {
+  if (albums[i].name && albums[i].artist) {
+    document.write(`${albums[i].artist} - ${albums[i].name}<br>`);
+
+    // Check for the album with the highest number of tracks
+    if (albums[i].tracks && albums[i].tracks.length > maxTracks) {
+      maxTracks = albums[i].tracks.length;
+      albumWithMaxTracks = albums[i].name;
+    }
+  }
+}
+//Print out the result of the highest number of tracks
+if (albumWithMaxTracks) {
+  document.write(`<br>Wow, ${albumWithMaxTracks} has <strong>${maxTracks}</strong> tracks!`);
+}
